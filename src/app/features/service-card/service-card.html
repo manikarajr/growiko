@@ -1,0 +1,39 @@
+<div class="card p-6 lg:p-8 group h-full flex flex-col">
+  <!-- Icon -->
+  <div
+    class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
+    [class]="getIconBg()">
+    <span class="w-7 h-7 [&>svg]:w-7 [&>svg]:h-7 text-white" [innerHTML]="service.icon | safeHtml"></span>
+  </div>
+
+  <!-- Title -->
+  <h3 class="font-syne font-bold text-xl text-gray-900 dark:text-white mb-3">
+    {{ service.title }}
+  </h3>
+
+  <!-- Description -->
+  <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
+    {{ service.description }}
+  </p>
+
+  <!-- Features -->
+  <ul class="space-y-2 mb-6 flex-1">
+    @for (feature of service.features; track feature) {
+    <li class="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+      <div class="w-1.5 h-1.5 rounded-full flex-shrink-0" [class]="getDotColor()"></div>
+      {{ feature }}
+    </li>
+    }
+  </ul>
+
+  <!-- CTA -->
+  <a routerLink="/services"
+    class="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group/link"
+    [class]="getLinkColor()">
+    Learn More
+    <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+      stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,325 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-gray-950 pt-20">
+  <!-- Background -->
+  <div class="absolute inset-0 hero-grid-pattern"></div>
+  <div
+    class="absolute top-20 right-0 w-1/2 h-full bg-gradient-to-l from-indigo-50/80 to-transparent dark:from-indigo-950/30 dark:to-transparent">
+  </div>
+  <!-- Floating blobs -->
+  <div class="absolute top-40 right-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div
+    class="absolute bottom-20 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-300">
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left content -->
+      <div>
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-100 dark:border-indigo-900 rounded-full mb-6 animate-fade-in-up">
+          <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-sm font-medium text-indigo-700 dark:text-indigo-300">Digital Marketing Agency</span>
+        </div>
+
+        <h1
+          class="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-gray-900 dark:text-white mb-6 animate-fade-in-up animation-delay-100">
+          Grow Your Brand<br />
+          <span class="gradient-text">Digitally</span>
+        </h1>
+
+        <p
+          class="text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200">
+          We craft data-driven digital marketing strategies that increase visibility, drive traffic, and generate leads
+          that convert into real business growth.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up animation-delay-300">
+          <a routerLink="/contact" class="btn-primary text-base px-8 py-4">
+            Get Started Free
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a routerLink="/services" class="btn-outline text-base px-8 py-4">
+            Our Services
+          </a>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="flex flex-wrap items-center gap-6 animate-fade-in-up animation-delay-400">
+          @for (trust of trustSignals; track trust.label) {
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 [&>svg]:w-5 [&>svg]:h-5" [innerHTML]="trust.icon | safeHtml"></span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ trust.label }}</span>
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- Right — Hero visual -->
+      <div class="relative animate-fade-in-right animation-delay-200">
+        <div class="relative">
+          <!-- Main card -->
+          <div
+            class="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 rounded-3xl p-8 shadow-2xl shadow-indigo-500/30 overflow-hidden">
+            <div class="absolute inset-0 opacity-20"
+              style="background-image: linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 30px 30px;">
+            </div>
+            <div class="relative">
+              <!-- Chart mock -->
+              <div class="flex items-end gap-2 h-32 mb-4">
+                @for (bar of chartBars; track $index) {
+                <div class="flex-1 bg-white/20 rounded-t-lg transition-all duration-300 hover:bg-white/30"
+                  [style.height.%]="bar"></div>
+                }
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <p class="text-indigo-200 text-xs mb-1">Organic Traffic Growth</p>
+                  <p class="text-white text-2xl font-bold font-syne">+320%</p>
+                </div>
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating metric cards -->
+          <div
+            class="absolute -left-6 top-10 bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-gray-800 animate-float">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center">
+                <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Monthly Leads</p>
+                <p class="font-bold text-gray-900 dark:text-white font-syne">1,240+</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -right-4 bottom-14 bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-gray-800 animate-float animation-delay-300">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500 dark:text-gray-400">ROI Generated</p>
+                <p class="font-bold text-gray-900 dark:text-white font-syne">5x Avg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+    <span class="text-xs text-gray-400">Scroll down</span>
+    <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span
+        class="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-sm font-semibold rounded-full mb-4 border border-indigo-200 dark:border-indigo-800">
+        What We Do
+      </span>
+      <h2 class="section-heading text-gray-900 dark:text-white mb-4">
+        Services That <span class="gradient-text">Drive Results</span>
+      </h2>
+      <p class="section-subheading">
+        We offer end-to-end digital marketing solutions designed to help your business grow, compete, and succeed in the
+        digital landscape.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (service of services().slice(0, 3); track service.id) {
+      <app-service-card [service]="service" />
+      }
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
+      @for (service of services().slice(3); track service.id) {
+      <app-service-card [service]="service" />
+      }
+    </div>
+
+    <div class="text-center mt-10">
+      <a routerLink="/services" class="btn-primary">
+        View All Services
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-700 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10"
+    style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 50px 50px;">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (stat of stats(); track stat.label) {
+      <div class="text-center">
+        <div
+          class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-4 [&>span>svg]:w-7 [&>span>svg]:h-7">
+          <span class="text-white" [innerHTML]="stat.icon | safeHtml"></span>
+        </div>
+        <div class="font-syne font-extrabold text-4xl lg:text-5xl text-white mb-2">
+          {{ stat.value }}{{ stat.suffix }}
+        </div>
+        <div class="text-indigo-200 font-medium">{{ stat.label }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <span
+          class="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-sm font-semibold rounded-full mb-4 border border-indigo-200 dark:border-indigo-800">
+          About Us
+        </span>
+        <h2 class="section-heading text-gray-900 dark:text-white mb-6">
+          We Are Your Digital<br /><span class="gradient-text">Growth Partners</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+          Growiko Media is a results-driven digital marketing agency with a team of passionate strategists, creators,
+          and technologists. We believe in the power of data, creativity, and innovation to drive sustainable business
+          growth.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+          From startups to established enterprises, we craft personalized marketing strategies that align with your
+          business goals and deliver measurable ROI.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          @for (feature of whyUs; track feature.title) {
+          <div class="flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0 mt-0.5 [&>svg]:w-4 [&>svg]:h-4 text-indigo-600 dark:text-indigo-400"
+              [innerHTML]="feature.icon | safeHtml"></div>
+            <div>
+              <p class="font-semibold text-sm text-gray-900 dark:text-white">{{ feature.title }}</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{{ feature.desc }}</p>
+            </div>
+          </div>
+          }
+        </div>
+
+        <a routerLink="/about" class="btn-primary">
+          Learn About Us
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Visual -->
+      <div class="relative">
+        <div class="grid grid-cols-2 gap-4">
+          @for (card of aboutCards; track card.title) {
+          <div class="card p-5 text-center" [class.col-span-2]="$last">
+            <div class="text-2xl lg:text-3xl font-syne font-bold gradient-text mb-1">{{ card.value }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">{{ card.title }}</div>
+          </div>
+          }
+        </div>
+
+        <!-- Decoration -->
+        <div class="absolute -z-10 -top-4 -right-4 w-24 h-24 rounded-full bg-indigo-100 dark:bg-indigo-900/30"></div>
+        <div class="absolute -z-10 -bottom-4 -left-4 w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-20 bg-gray-50 dark:bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span
+        class="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-sm font-semibold rounded-full mb-4 border border-indigo-200 dark:border-indigo-800">
+        Why Growiko
+      </span>
+      <h2 class="section-heading text-gray-900 dark:text-white mb-4">
+        What Sets Us <span class="gradient-text">Apart</span>
+      </h2>
+      <p class="section-subheading">
+        We don't just run campaigns — we build partnerships and deliver strategies designed around your unique business
+        objectives.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (reason of reasons; track reason.title) {
+      <div class="card p-6 text-center group">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 [&>svg]:w-7 [&>svg]:h-7 text-white"
+          [innerHTML]="reason.icon | safeHtml"></div>
+        <h3 class="font-syne font-bold text-lg text-gray-900 dark:text-white mb-2">{{ reason.title }}</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{{ reason.desc }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 bg-white dark:bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <span
+        class="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-sm font-semibold rounded-full mb-4 border border-indigo-200 dark:border-indigo-800">
+        Testimonials
+      </span>
+      <h2 class="section-heading text-gray-900 dark:text-white mb-4">
+        Clients Love <span class="gradient-text">Our Work</span>
+      </h2>
+      <p class="section-subheading">
+        Don't take our word for it — hear from the businesses we've helped grow.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (t of testimonials(); track t.id) {
+      <app-testimonial-card [testimonial]="t" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-cta-section />

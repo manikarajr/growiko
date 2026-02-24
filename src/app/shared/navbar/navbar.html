@@ -1,0 +1,94 @@
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    [class.bg-white]="isScrolled() && !themeService.isDark()" [class.dark:bg-gray-950]="isScrolled()"
+    [class.bg-transparent]="!isScrolled()" [class.shadow-lg]="isScrolled()"
+    [class.shadow-gray-200/50]="isScrolled() && !themeService.isDark()" [class.dark:shadow-black/30]="isScrolled()"
+    [class.backdrop-blur-xl]="isScrolled()">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+
+            <!-- Logo -->
+            <a routerLink="/" class="flex items-center gap-3 group">
+                <span class="font-syne font-bold text-xl text-gray-900 dark:text-white">
+                    Growiko<span class="text-indigo-600"> Media</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-8">
+                @for (link of navLinks; track link.path) {
+                <a [routerLink]="link.path" routerLinkActive="text-indigo-600 dark:text-indigo-400"
+                    [routerLinkActiveOptions]="{exact: link.path === '/'}"
+                    class="font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 relative group">
+                    {{ link.label }}
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                </a>
+                }
+            </div>
+
+            <!-- Right side -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle -->
+                <button (click)="themeService.toggle()"
+                    class="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                    aria-label="Toggle theme">
+                    @if (themeService.isDark()) {
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                    } @else {
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                    }
+                </button>
+
+                <!-- CTA Button -->
+                <a routerLink="/contact" class="hidden lg:inline-flex btn-primary text-sm">
+                    Get Started
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button (click)="toggleMenu()"
+                    class="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Toggle menu">
+                    @if (menuOpen()) {
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    } @else {
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    }
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        @if (menuOpen()) {
+        <div
+            class="lg:hidden mobile-menu-enter border-t border-gray-100 dark:border-gray-800 py-4 pb-6 space-y-1 bg-white dark:bg-gray-950">
+            @for (link of navLinks; track link.path) {
+            <a [routerLink]="link.path"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50"
+                [routerLinkActiveOptions]="{exact: link.path === '/'}" (click)="menuOpen.set(false)"
+                class="block px-4 py-3 rounded-xl font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                {{ link.label }}
+            </a>
+            }
+            <div class="pt-3 px-4">
+                <a routerLink="/contact" (click)="menuOpen.set(false)" class="btn-primary w-full justify-center">
+                    Get Started
+                </a>
+            </div>
+        </div>
+        }
+    </nav>
+</header>
