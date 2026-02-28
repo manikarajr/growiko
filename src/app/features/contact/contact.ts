@@ -28,8 +28,8 @@ export class Contact implements OnInit {
   });
 
   ngOnInit() {
-    this.title.setTitle('Contact Us | Growiko Media - Get a Free Consultation');
-    this.meta.updateTag({ name: 'description', content: 'Contact Growiko Media for a free digital marketing consultation. Reach us by phone, email, or fill out our contact form.' });
+    this.title.setTitle('Contact Us | CLIXHORA');
+    this.meta.updateTag({ name: 'description', content: 'Contact CLIXHORA for a free digital marketing consultation. Reach us by phone, email, or fill out our contact form.' });
   }
 
   isInvalid(field: string): boolean {

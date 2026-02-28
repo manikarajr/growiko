@@ -21,8 +21,8 @@ export class Services implements OnInit {
   services = signal<Service[]>([]);
 
   ngOnInit() {
-    this.title.setTitle('Our Services | Growiko Media - Digital Marketing');
-    this.meta.updateTag({ name: 'description', content: 'Explore Growiko Media\'s full range of digital marketing services: SEO, social media management, paid advertising, video production, and more.' });
+    this.title.setTitle('Our Services | CLIXHORA');
+    this.meta.updateTag({ name: 'description', content: 'Explore CLIXHORA\'s full range of digital marketing services: SEO, social media management, paid advertising, video production, and more.' });
     this.services.set(this.dataService.getServices());
   }
 

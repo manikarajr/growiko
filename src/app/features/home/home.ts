@@ -26,8 +26,8 @@ export class Home implements OnInit {
   chartBars = [30, 50, 40, 70, 60, 80, 65, 90, 75, 95];
 
   ngOnInit() {
-    this.title.setTitle('Growiko Media | Grow Your Brand Digitally');
-    this.meta.updateTag({ name: 'description', content: 'Growiko Media - Digital marketing agency offering SEO, social media management, paid advertising campaigns, and video production.' });
+    this.title.setTitle('CLIXHORA | Grow Your Brand Digitally');
+    this.meta.updateTag({ name: 'description', content: 'CLIXHORA - Digital marketing agency offering SEO, social media management, paid advertising campaigns, and video production.' });
 
     this.services.set(this.dataService.getServices());
     this.stats.set(this.dataService.getStats());

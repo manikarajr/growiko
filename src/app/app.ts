@@ -13,6 +13,6 @@ import { FloatingSocial } from './shared/floating-social/floating-social';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  protected readonly title = signal('growiko');
+  protected readonly title = signal('CLIXHORA');
   themeService = inject(ThemeService);
 }

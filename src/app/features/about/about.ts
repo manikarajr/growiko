@@ -16,8 +16,8 @@ export class About implements OnInit {
   private title = inject(Title);
 
   ngOnInit() {
-    this.title.setTitle('About Us | Growiko Media - Digital Marketing Agency');
-    this.meta.updateTag({ name: 'description', content: 'Learn about Growiko Media - our story, mission, vision, and the team driving digital marketing results for businesses across India.' });
+    this.title.setTitle('About Us | CLIXHORA');
+    this.meta.updateTag({ name: 'description', content: 'Learn about CLIXHORA - our story, mission, vision, and the team driving digital marketing results for businesses across India.' });
   }
 
   stats = [

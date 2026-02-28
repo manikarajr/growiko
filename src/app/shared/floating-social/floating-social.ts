@@ -8,6 +8,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FloatingSocial {
-    whatsappLink = 'https://wa.me/919876543210'; // Replace with actual number
-    instagramLink = 'https://www.instagram.com/growiko.cbe/'; // Replace with actual handle
+    whatsappLink = 'https://wa.me/9198765432660'; // Replace with actual number
+    instagramLink = 'https://www.instagram.com/clixhora/'; // Replace with actual handle
 }
